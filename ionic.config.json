@@ -1,0 +1,7 @@
+{
+  "name": "mi-app-movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

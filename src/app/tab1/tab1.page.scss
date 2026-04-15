@@ -1,0 +1,152 @@
+// Color verde oscuro del fondo superior
+.finance-bg {
+  --background: #26776C; 
+}
+
+.balance-container {
+  text-align: center;
+  padding: 40px 0;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+}
+
+// La "hoja blanca" con bordes redondeados
+.white-sheet {
+  background: white;
+  border-radius: 30px 30px 0 0;
+  min-height: 100%;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.section-title {
+  color: #26776C;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+ion-card {
+  margin-bottom: 20px !important; // Esto garantiza el espacio entre ellas
+  margin-inline: 0px;            // Para que se alineen bien a los lados
+  border-radius: 20px;
+  box-shadow: none;              // Estilo plano como el de tu imagen
+}
+
+// Estilo de la tarjeta de INGRESOS (Verde clarito)
+.card-ingresos {
+  background: #E0F2F1; // Color pastel verde
+  border-radius: 20px;
+  box-shadow: none;
+  margin: 0;
+
+  .icon-circle {
+    background: #B2DFDB;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-icon {
+      font-size: 1.5rem;
+      color: #00695C;
+    }
+  }
+
+  .card-label {
+    margin: 0;
+    color: #00695C;
+    font-size: 0.9rem;
+  }
+
+  .card-amount {
+    margin: 0;
+    font-weight: bold;
+    color: #004D40;
+  }
+
+  ion-icon[name="add-circle"] {
+    font-size: 2rem;
+    color: #26776C;
+  }
+}
+
+.card-gastos {
+  background: #f6c8c7; // Color pastel verde
+  border-radius: 20px;
+  box-shadow: none;
+  margin: 0;
+
+  .icon-circle {
+    background: #D29E9E;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-icon {
+      font-size: 1.5rem;
+      color: #C62828;
+    }
+  }
+
+  .card-label {
+    margin: 0;
+    color: #C62828;
+    font-size: 0.9rem;
+  }
+
+  .card-amount {
+    margin: 0;
+    font-weight: bold;
+    color: #004D40;
+  }
+
+  ion-icon[name="add-circle"] {
+    font-size: 2rem;
+    color: #C62828;
+  }
+}
+
+.card-ahorros {
+  background: #FFFDE7; // Color pastel verde
+  border-radius: 20px;
+  box-shadow: none;
+  margin: 0;
+
+  .icon-circle {
+    background: #d3cc83;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-icon {
+      font-size: 1.5rem;
+      color: #f78725;
+    }
+  }
+
+  .card-label {
+    margin: 0;
+    color: #f78725;
+    font-size: 0.9rem;
+  }
+
+  .card-amount {
+    margin: 0;
+    font-weight: bold;
+    color: #004D40;
+  }
+
+  ion-icon[name="add-circle"] {
+    font-size: 2rem;
+    color: #f78725;
+  }
+}

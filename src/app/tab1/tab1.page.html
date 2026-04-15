@@ -1,0 +1,77 @@
+<ion-content class="ion-padding finance-bg">
+  
+  <div class="balance-container">
+    <ion-text>
+      <p style="color: rgba(255,255,255,0.8)">Saldo disponible</p>
+      <h1> {{ saldoDisponible | number: '1.2-2' }} €</h1>
+    </ion-text>
+  </div>
+
+  <div class="white-sheet">
+    <h2 class="section-title">Detalle mensual</h2>
+
+    <ion-card class="card-ingresos">
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="2">
+            <div class="icon-circle"><ion-icon name="cash-outline"></ion-icon></div>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text>
+              <p class="card-label">Ingresos</p>
+              <h3 class="card-amount">$ {{ totalIngresos | number:'1.2-2' }}</h3>
+            </ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button fill="clear" (click)="agregarIngreso()">
+              <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card class="card-gastos">
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="2">
+            <div class="icon-circle"><ion-icon name="trending-down-outline"></ion-icon></div>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text>
+              <p class="card-label">Gastos</p>
+              <h3 class="card-amount">$ {{ totalGastos | number:'1.2-2' }}</h3>
+            </ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button fill="clear" (click)="agregarGasto()">
+              <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-ahorros">
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="2">
+            <div class="icon-circle"><ion-icon name="wallet-outline"></ion-icon></div>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text>
+              <p class="card-label">Ahorros</p>
+              <h3 class="card-amount">$ {{ totalAhorros | number:'1.2-2' }}</h3>
+            </ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button fill="clear" (click)="agregarAhorro()">
+              <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
