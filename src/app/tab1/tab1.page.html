@@ -10,7 +10,7 @@
   <div class="white-sheet">
     <h2 class="section-title">Detalle mensual</h2>
 
-    <ion-card class="card-ingresos">
+    <ion-card class="card-ingresos" (click)="verDetalles('ingreso')">
       <ion-card-content>
         <ion-row class="ion-align-items-center">
           <ion-col size="2">
@@ -19,11 +19,11 @@
           <ion-col size="8">
             <ion-text>
               <p class="card-label">Ingresos</p>
-              <h3 class="card-amount">$ {{ totalIngresos | number:'1.2-2' }}</h3>
+              <h3 class="card-amount">{{ totalIngresos | number:'1.2-2' }} €</h3>
             </ion-text>
           </ion-col>
           <ion-col size="2">
-            <ion-button fill="clear" (click)="agregarIngreso()">
+            <ion-button fill="clear" (click)="abrirFormulario('ingreso'); $event.stopPropagation()">
               <ion-icon slot="icon-only" name="add-circle"></ion-icon>
             </ion-button>
           </ion-col>
@@ -31,7 +31,7 @@
       </ion-card-content>
     </ion-card>
     
-    <ion-card class="card-gastos">
+    <ion-card class="card-gastos" (click)="verDetalles('gasto')">
       <ion-card-content>
         <ion-row class="ion-align-items-center">
           <ion-col size="2">
@@ -40,11 +40,11 @@
           <ion-col size="8">
             <ion-text>
               <p class="card-label">Gastos</p>
-              <h3 class="card-amount">$ {{ totalGastos | number:'1.2-2' }}</h3>
+              <h3 class="card-amount">{{ totalGastos | number:'1.2-2' }} €</h3>
             </ion-text>
           </ion-col>
           <ion-col size="2">
-            <ion-button fill="clear" (click)="agregarGasto()">
+            <ion-button fill="clear" (click)="abrirFormulario('gasto'); $event.stopPropagation()">
               <ion-icon slot="icon-only" name="add-circle"></ion-icon>
             </ion-button>
           </ion-col>
@@ -52,26 +52,26 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-card class="card-ahorros">
-      <ion-card-content>
-        <ion-row class="ion-align-items-center">
-          <ion-col size="2">
-            <div class="icon-circle"><ion-icon name="wallet-outline"></ion-icon></div>
-          </ion-col>
-          <ion-col size="8">
-            <ion-text>
-              <p class="card-label">Ahorros</p>
-              <h3 class="card-amount">$ {{ totalAhorros | number:'1.2-2' }}</h3>
-            </ion-text>
-          </ion-col>
-          <ion-col size="2">
-            <ion-button fill="clear" (click)="agregarAhorro()">
-              <ion-icon slot="icon-only" name="add-circle"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
+    <ion-card class="card-ahorros" (click)="verDetalles('ahorro')">
+  <ion-card-content>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2">
+        <div class="icon-circle"><ion-icon name="wallet-outline"></ion-icon></div>
+      </ion-col>
+      <ion-col size="8">
+        <ion-text>
+          <p class="card-label">Ahorros</p>
+          <h3 class="card-amount">{{ totalAhorros | number:'1.2-2' }} €</h3>
+        </ion-text>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button fill="clear" (click)="abrirFormulario('ahorro'); $event.stopPropagation()">
+          <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
 
   </div>
 </ion-content>

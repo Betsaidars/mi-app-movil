@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir {{ tipo | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <ion-item lines="full" class="ion-margin-bottom">
+      <ion-label position="floating">Monto (€)</ion-label>
+      <ion-input type="number" [(ngModel)]="nuevoMovimiento.monto" placeholder="0.00"></ion-input>
+      <ion-icon name="cash-outline" slot="start" color="success"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full" class="ion-margin-bottom">
+      <ion-label position="floating">¿A qué va destinado?</ion-label>
+      <ion-input type="text" [(ngModel)]="nuevoMovimiento.destino" placeholder="Ej: Supermercado, Alquiler..."></ion-input>
+      <ion-icon name="pricetag-outline" slot="start" color="primary"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full" class="ion-margin-bottom">
+      <ion-label>Fecha</ion-label>
+      <ion-datetime-button datetime="date"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="date" presentation="date" [(ngModel)]="nuevoMovimiento.fecha"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <ion-button expand="block" class="ion-margin-top" (click)="guardar()">
+      Guardar {{ tipo }}
+      <ion-icon slot="end" name="checkmark-done-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
