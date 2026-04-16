@@ -3,16 +3,23 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService { // <--- El "export" es fundamental
-  private usuarioRegistrado: any = null;
+export class AuthService {
 
   constructor() { }
 
-  guardarUsuario(datos: any) {
-    this.usuarioRegistrado = datos;
+  // Cambiamos esto para que guarde en el "disco duro" del navegador
+  guardarUsuario(usuario: any) {
+    localStorage.setItem('usuario_registrado', JSON.stringify(usuario));
   }
 
+  // Cambiamos esto para que lo lea del "disco duro"
   obtenerUsuario() {
-    return this.usuarioRegistrado;
+    const datos = localStorage.getItem('usuario_registrado');
+    return datos ? JSON.parse(datos) : null;
+  }
+  
+  // Opcional: Para cuando quieras cerrar sesión y borrar todo
+  limpiarDatos() {
+    localStorage.removeItem('usuario_registrado');
   }
 }
