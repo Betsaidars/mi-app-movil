@@ -1,0 +1,29 @@
+.auth-bg {
+  --background: #26776C;
+}
+
+.auth-container {
+  margin-top: 15%;
+  text-align: center;
+
+  .logo-section {
+    color: white;
+    margin-bottom: 20px;
+    ion-icon { font-size: 64px; }
+  }
+}
+
+ion-card {
+  border-radius: 20px;
+}
+
+.error-text {
+  font-size: 0.8rem;
+  margin: 5px 0 0 16px;
+}
+
+.eye-button {
+  margin: 0;
+  height: 100%;
+  --color: #666;
+}

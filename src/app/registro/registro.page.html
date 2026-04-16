@@ -1,0 +1,40 @@
+<ion-content class="ion-padding auth-bg">
+  <div class="auth-container">
+    <div class="logo-section">
+      <ion-icon name="person-add-outline"></ion-icon>
+      <h1>Crear Cuenta</h1>
+    </div>
+
+    <ion-card mode="ios">
+      <ion-card-content>
+        <form [formGroup]="registroForm">
+          
+          <ion-item lines="full">
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input formControlName="email" type="email" placeholder="tu@correo.com"></ion-input>
+          </ion-item>
+
+          <ion-item lines="full" class="ion-margin-top">
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input 
+              formControlName="password" 
+              [type]="passwordOculta ? 'password' : 'text'" 
+              placeholder="Mínimo 8 caracteres">
+              <ion-button fill="clear" slot="end" (click)="togglePassword()">
+                <ion-icon slot="icon-only" [name]="passwordOculta ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+              </ion-button>
+            </ion-input>
+          </ion-item>
+
+          <ion-button expand="block" (click)="registrar()" [disabled]="registroForm.invalid" class="ion-margin-top">
+            Registrarme
+          </ion-button>
+        </form>
+        
+        <ion-button expand="block" fill="clear" color="medium" routerLink="/login">
+          ¿Ya tienes cuenta? Inicia sesión
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
