@@ -9,15 +9,25 @@
 
 <ion-content class="ion-padding">
   <ion-list *ngIf="movimientosFiltrados.length > 0">
-    <ion-item *ngFor="let item of movimientosFiltrados">
-      <ion-label>
-        <h2 style="font-weight: bold;">{{ item.destino }}</h2>
-        <p>{{ item.fecha | date:'dd/MM/yyyy' }}</p>
-      </ion-label>
-      <ion-note slot="end" [color]="tipo === 'gasto' ? 'danger' : 'success'" style="font-size: 1.1em;">
-        {{ tipo === 'gasto' ? '-' : '+' }}{{ item.monto }} €
-      </ion-note>
-    </ion-item>
+    <ion-item-sliding *ngFor="let item of movimientosFiltrados; let i = index">
+      
+      <ion-item>
+        <ion-label>
+          <h2 style="font-weight: bold;">{{ item.destino }}</h2>
+          <p>{{ item.fecha | date:'dd/MM/yyyy' }}</p>
+        </ion-label>
+        <ion-note slot="end" [color]="tipo === 'gasto' ? 'danger' : 'success'" style="font-size: 1.1em;">
+          {{ tipo === 'gasto' ? '-' : '+' }}{{ item.monto | number:'1.2-2' }} €
+        </ion-note>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="borrar(i)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
   </ion-list>
 
   <div *ngIf="movimientosFiltrados.length === 0" class="ion-text-center ion-padding">
